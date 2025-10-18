@@ -1,0 +1,34 @@
+package net.kaupenjoe.tutorialmod.item;
+
+import net.kaupenjoe.tutorialmod.TutorialMod;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
+
+public class ModCreativeModeTabs {
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TutorialMod.MOD_ID);
+
+
+    public static final RegistryObject<CreativeModeTab> KIT_PVP_V_ITEMS = CREATIVE_MODE_TABS.register("kit_pvp_v_items_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ALEXANDRITE.get()))
+
+                    .title(Component.translatable("creativetab.tutorialmod.kit_pvp_v_items"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.ALEXANDRITE.get());
+                        output.accept(ModItems.RAW_ALEXANDRITE.get());
+                        output.accept(ModItems.DASH_ITEM.get());
+                        output.accept(ModItems.FOX5_BOW.get());
+                        output.accept(ModItems.TOMAHAWK.get());
+                        output.accept(ModItems.GRENADE.get());
+                        output.accept(ModItems.TRIPLE_ARROW.get());
+                    }).build());
+
+    public static void register(IEventBus eventBus){
+        CREATIVE_MODE_TABS.register(eventBus);
+    }
+}

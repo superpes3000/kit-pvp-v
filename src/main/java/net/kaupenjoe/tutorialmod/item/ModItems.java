@@ -3,10 +3,7 @@ package net.kaupenjoe.tutorialmod.item;
 import net.kaupenjoe.tutorialmod.TutorialMod;
 import net.kaupenjoe.tutorialmod.item.abilities.DashItem;
 import net.kaupenjoe.tutorialmod.item.bows.Fox5BOW;
-import net.kaupenjoe.tutorialmod.item.swords.Fox5Sword;
-import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.TieredItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,6 +21,12 @@ public class ModItems {
             () -> new DashItem(new Item.Properties()));
     public static final RegistryObject<Item> FOX5_BOW = ITEMS.register("fox5_bow",
             () -> new Fox5BOW(new Item.Properties()));
+    public static final RegistryObject<Item> TOMAHAWK = ITEMS.register("tomahawk",
+            () -> new net.kaupenjoe.tutorialmod.item.custom.TomahawkItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> GRENADE = ITEMS.register("grenade",
+            () -> new GrenadeItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> TRIPLE_ARROW = ITEMS.register("triple_arrow",
+            () -> new TripleArrowItem(new Item.Properties().stacksTo(16)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

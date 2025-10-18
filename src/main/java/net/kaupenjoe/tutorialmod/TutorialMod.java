@@ -1,6 +1,8 @@
 package net.kaupenjoe.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.kaupenjoe.tutorialmod.entity.ModEntities;
+import net.kaupenjoe.tutorialmod.item.ModCreativeModeTabs;
 import net.kaupenjoe.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -32,6 +34,8 @@ public class TutorialMod {
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModEntities.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -52,6 +56,7 @@ public class TutorialMod {
         if(event.getTabKey() == CreativeModeTabs.COMBAT){
             event.accept(ModItems.FOX5_BOW);
             event.accept(ModItems.DASH_ITEM);
+            event.accept(ModItems.TOMAHAWK);
         }
     }
 

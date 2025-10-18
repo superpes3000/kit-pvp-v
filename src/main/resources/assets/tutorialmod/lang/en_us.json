@@ -1,4 +1,12 @@
 {
-  "item.tutorialmod.alexandrite": "Alexandrite Gem",
-  "item.tutorialmod.raw_alexandrite": "Raw Alexandrite"
+  "item.tutorialmod.spin_attack": "§6Spin Attack",
+  "item.tutorialmod.knight_assault": "§6Knight Assault",
+  "item.tutorialmod.tomahawk": "§7Tomahawk",
+  "item.tutorialmod.lumber_rush": "§6Lumber Rage",
+  "item.tutorialmod.tomahawk_escape": "§6Tomahawk Escape",
+  "item.tutorialmod.beast_rush": "§3Beast Rush",
+  "item.tutorialmod.jump_slam": "§3Jump Slam",
+  "item.tutorialmod.crow_attack": "§7Spit",
+  "item.tutorialmod.crow_burst": "§8Crow Jump",
+  "item.tutorialmod.crow_dash": "§7Crow Dash"
 }

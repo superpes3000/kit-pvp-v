@@ -1,7 +1,6 @@
-package com.example.dashmod.client;
+package net.kaupenjoe.tutorialmod.client;
 
 import net.kaupenjoe.tutorialmod.TutorialMod;
-import net.kaupenjoe.tutorialmod.client.Keybinds;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -71,7 +70,7 @@ public class ClientEvents {
 
             // Сообщение
             player.displayClientMessage(
-                    net.minecraft.network.chat.Component.literal("💨 Рывок вперёд!"),
+                    net.minecraft.network.chat.Component.literal("Рывок вперёд!"),
                     true
             );
         }

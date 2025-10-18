@@ -15,17 +15,22 @@ public class ModCreativeModeTabs {
 
 
     public static final RegistryObject<CreativeModeTab> KIT_PVP_V_ITEMS = CREATIVE_MODE_TABS.register("kit_pvp_v_items_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ALEXANDRITE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SPIN_ATTACK.get()))
 
-                    .title(Component.translatable("creativetab.tutorialmod.kit_pvp_v_items"))
+                    .title(Component.literal("Kit PvP V"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.ALEXANDRITE.get());
-                        output.accept(ModItems.RAW_ALEXANDRITE.get());
-                        output.accept(ModItems.DASH_ITEM.get());
-                        output.accept(ModItems.FOX5_BOW.get());
+                        output.accept(ModItems.SPIN_ATTACK.get());
+                        output.accept(ModItems.KNIGHT_ASSAULT.get());
                         output.accept(ModItems.TOMAHAWK.get());
+                        output.accept(ModItems.TOMAHAWK_ESCAPE.get());
+                        output.accept(ModItems.LUMBER_RUSH.get());
+                        output.accept(ModItems.BEAST_RUSH.get());
+                        output.accept(ModItems.JUMP_SLAM.get());
+                        output.accept(ModItems.FOX5_BOW.get());
                         output.accept(ModItems.GRENADE.get());
-                        output.accept(ModItems.TRIPLE_ARROW.get());
+                        output.accept(ModItems.CROW_ATTACK.get());
+                        output.accept(ModItems.CROW_BURST.get());
+                        output.accept(ModItems.DASH_ITEM.get());
                     }).build());
 
     public static void register(IEventBus eventBus){

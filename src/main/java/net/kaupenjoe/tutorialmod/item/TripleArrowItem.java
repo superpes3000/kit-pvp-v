@@ -1,5 +1,6 @@
 package net.kaupenjoe.tutorialmod.item;
 
+import net.kaupenjoe.tutorialmod.entity.custom.CrowProjectile;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EntityType;
@@ -29,14 +30,18 @@ public class TripleArrowItem extends Item {
         ItemStack stack = player.getItemInHand(hand);
 
         if (!world.isClientSide) {
+            if (player.getCooldowns().isOnCooldown(this)) {
+                return InteractionResultHolder.fail(stack);
+            }
+            player.getCooldowns().addCooldown(this, 10);
             // Угол отклонения в градусах
             float[] angles = {-10f, 0f, 10f};
 
             for (float angle : angles) {
-                Arrow arrow = new Arrow(EntityType.ARROW, world);
-
+                //Arrow arrow = new Arrow(EntityType.ARROW, world);
+                CrowProjectile snowball = new CrowProjectile(world, player);
+                snowball.setPos(player.getX(), player.getEyeY() - 0.1, player.getZ());
                 // Устанавливаем позицию стрелы в глазах игрока
-                arrow.setPos(player.getX(), player.getEyeY() - 0.1, player.getZ());
 
                 // Получаем направление игрока
                 Vec3 look = player.getLookAngle();
@@ -51,10 +56,10 @@ public class TripleArrowItem extends Item {
                 Vec3 dir = new Vec3(dx, look.y, dz);
 
                 // Задаем скорость и разброс
-                arrow.shoot(dir.x, dir.y, dir.z, 3.0f, 1.0f);
+                snowball.shoot(dir.x, dir.y, dir.z, 3.0f, 1.0f);
 
 
-                world.addFreshEntity(arrow);
+                world.addFreshEntity(snowball);
             }
         }
 

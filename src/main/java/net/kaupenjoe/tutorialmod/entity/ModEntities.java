@@ -1,6 +1,7 @@
 package net.kaupenjoe.tutorialmod.entity;
 
 import net.kaupenjoe.tutorialmod.TutorialMod;
+import net.kaupenjoe.tutorialmod.entity.custom.CrowProjectile;
 import net.kaupenjoe.tutorialmod.entity.custom.TomahawkProjectileEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -21,6 +22,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<GrenadeEntity>> GRENADE =
             ENTITY_TYPES.register("grenade", () -> EntityType.Builder.<GrenadeEntity>of(GrenadeEntity::new, MobCategory.MISC)
                     .sized(0.5f, 1.15f).build("grenade"));
+
+    public static final RegistryObject<EntityType<GrenadeEntity>> CROW_PROJECTILE =
+            ENTITY_TYPES.register("crow_projectile", () -> EntityType.Builder.<GrenadeEntity>of(GrenadeEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 1.15f).build("crow_projectile"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

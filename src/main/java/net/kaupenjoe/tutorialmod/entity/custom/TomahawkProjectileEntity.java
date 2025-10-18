@@ -24,6 +24,15 @@ public class TomahawkProjectileEntity extends AbstractArrow {
     public TomahawkProjectileEntity(LivingEntity shooter, Level level) {
         super(ModEntities.TOMAHAWK.get(), shooter, level, new ItemStack(ModItems.TOMAHAWK.get()), null);
     }
+    @Override
+    public void tick() {
+        super.tick();
+
+        // Проверяем, упала ли на землю
+        if (this.isGrounded()) {
+            this.discard(); // удаляем сущность
+        }
+    }
 
     @Override
     protected ItemStack getDefaultPickupItem() {

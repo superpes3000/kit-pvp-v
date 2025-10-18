@@ -1,10 +1,9 @@
-package net.kaupenjoe.tutorialmod.entity.client;
+package net.kaupenjoe.tutorialmod.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import net.kaupenjoe.tutorialmod.TutorialMod;
-import net.kaupenjoe.tutorialmod.client.TomahawkProjectileModel;
 import net.kaupenjoe.tutorialmod.entity.custom.TomahawkProjectileEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;

@@ -33,7 +33,7 @@ public class TripleArrowItem extends Item {
             if (player.getCooldowns().isOnCooldown(this)) {
                 return InteractionResultHolder.fail(stack);
             }
-            player.getCooldowns().addCooldown(this, 10);
+            player.getCooldowns().addCooldown(this, 20);
             // Угол отклонения в градусах
             float[] angles = {-10f, 0f, 10f};
 

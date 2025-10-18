@@ -25,7 +25,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<GrenadeEntity>> CROW_PROJECTILE =
             ENTITY_TYPES.register("crow_projectile", () -> EntityType.Builder.<GrenadeEntity>of(GrenadeEntity::new, MobCategory.MISC)
-                    .sized(0.5f, 1.15f).build("crow_projectile"));
+                    .sized(0.5f, 0.8f).build("crow_projectile"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

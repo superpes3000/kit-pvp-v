@@ -118,7 +118,7 @@ public class JumpSlam extends Item {
                             player.getX() + 3, player.getY() + 2, player.getZ() + 3);
 
                     for (LivingEntity target : world.getEntitiesOfClass(LivingEntity.class, area, e -> e != player)) {
-                        target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 2));
+                        target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 40, 2));
 
                     }
 

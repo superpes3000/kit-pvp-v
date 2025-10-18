@@ -129,7 +129,7 @@ public class CrowBurst extends Item {
         tooltip.add(Component.literal("§8Перезарядка: 20 секунд"));
     }
     private void shootAround(Level world, Player player){
-        int projectileCount = 12; // кол-во снарядов
+        int projectileCount = 16; // кол-во снарядов
         float radius = 1.5f;     // радиус, на котором они появляются
         float speed = 2.5f;      // скорость вылета
         float spread = 0.2f;     // разброс

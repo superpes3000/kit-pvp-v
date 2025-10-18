@@ -26,10 +26,10 @@ public class CrowDash extends Item {
                 ItemStack stack = player.getItemInHand(hand);
                 return InteractionResultHolder.fail(stack);
             }
-            player.getCooldowns().addCooldown(this, 40);
+            player.getCooldowns().addCooldown(this, 80);
 
             Vec3 look = player.getLookAngle();
-            double dashStrength = 2.0; // сила рывка
+            double dashStrength = 1.5; // сила рывка
 
             // Новый вектор движения — короткий "прыжок" вперёд
             Vec3 dash = new Vec3(look.x * dashStrength, look.y * dashStrength, look.z * dashStrength);

@@ -38,7 +38,7 @@ public class CrowProjectile extends ThrowableItemProjectile {
         if (!this.level().isClientSide) {
             // Наносим 1 урона (1 сердце)
 
-            result.getEntity().hurt(this.damageSources().thrown(this, this.getOwner()), 1.5F);
+            result.getEntity().hurt(this.damageSources().thrown(this, this.getOwner()), 2.0F);
         }
     }
 }

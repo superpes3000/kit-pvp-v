@@ -8,7 +8,7 @@ import net.minecraft.world.item.TooltipFlag;
 import java.util.List;
 
 public class KitPvpItem {
-    @Override
+
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         // Добавляем описание
         tooltip.add(Component.literal("§7Делает рывок вперед"));

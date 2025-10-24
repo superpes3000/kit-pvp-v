@@ -1,5 +1,6 @@
 package net.strauss.kitpvpmod.entity;
 
+import net.minecraft.resources.ResourceLocation;
 import net.strauss.kitpvpmod.KitPvpMod;
 import net.strauss.kitpvpmod.entity.custom.TomahawkProjectileEntity;
 import net.minecraft.world.entity.EntityType;
@@ -29,8 +30,9 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<HookProjectile>> HOOK_PROJECTILE =
             ENTITY_TYPES.register("hook_projectile", () -> EntityType.Builder.<HookProjectile>of(HookProjectile::new, MobCategory.MISC)
+                    .clientTrackingRange(128)
                     .sized(0.8f, 0.8f).build("hook_projectile"));
-
+    
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

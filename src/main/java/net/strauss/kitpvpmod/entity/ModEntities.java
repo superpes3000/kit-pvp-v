@@ -9,6 +9,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.strauss.kitpvpmod.entity.mob.FriendlySkeleton;
+import net.strauss.kitpvpmod.entity.mob.FriendlyWitherSkeleton;
 import net.strauss.kitpvpmod.entity.projectile.HookProjectile;
 
 public class ModEntities {
@@ -23,13 +25,6 @@ public class ModEntities {
     public static final RegistryObject<EntityType<GrenadeEntity>> GRENADE =
             ENTITY_TYPES.register("grenade", () -> EntityType.Builder.<GrenadeEntity>of(GrenadeEntity::new, MobCategory.MISC)
                     .sized(0.5f, 1.15f).build("grenade"));
-    public static final RegistryObject<EntityType<MagneticAttractSnowballEntity>> MAGNETIC_PROJECTILE_ATTRACT =
-            ENTITY_TYPES.register("magnetic_projectile_attract", () -> EntityType.Builder.<MagneticAttractSnowballEntity>of(MagneticAttractSnowballEntity::new, MobCategory.MISC)
-                    .sized(0.5f, 1.15f).build("magnetic_projectile_attract"));
-
-    public static final RegistryObject<EntityType<MagneticAttractZone>> MAGNETIC_ATTRACT_ZONE =
-            ENTITY_TYPES.register("magnetic_attract_zone", () -> EntityType.Builder.<MagneticAttractZone>of(MagneticAttractZone::new, MobCategory.MISC)
-                    .sized(0.5f, 1.15f).build("magnetic_attract_zone"));
 
     public static final RegistryObject<EntityType<GrenadeEntity>> CROW_PROJECTILE =
             ENTITY_TYPES.register("crow_projectile", () -> EntityType.Builder.<GrenadeEntity>of(GrenadeEntity::new, MobCategory.MISC)
@@ -39,10 +34,19 @@ public class ModEntities {
             ENTITY_TYPES.register("hook_projectile", () -> EntityType.Builder.<HookProjectile>of(HookProjectile::new, MobCategory.MISC)
                     .clientTrackingRange(128)
                     .sized(0.8f, 0.8f).build("hook_projectile"));
+    public static final RegistryObject<EntityType<FriendlySkeleton>> FRIENDLY_SKELETON =
+            ENTITY_TYPES.register("friendly_skeleton",
+                    () -> EntityType.Builder.<FriendlySkeleton>of(FriendlySkeleton::new, MobCategory.MONSTER)
+                            .sized(0.6f, 1.99f).build("friendly_skeleton"));
 
+    public static final RegistryObject<EntityType<FriendlyWitherSkeleton>> FRIENDLY_WITHER_SKELETON =
+            ENTITY_TYPES.register("friendly_wither_skeleton",
+                    () -> EntityType.Builder.<FriendlyWitherSkeleton>of(FriendlyWitherSkeleton::new, MobCategory.MONSTER)
+                            .sized(0.7f, 2.4f).build("friendly_wither_skeleton"));
     public static final RegistryObject<EntityType<SwordProjectileEntity>> SWORD_PROJECTILE =
             ENTITY_TYPES.register("sword_projectile", () -> EntityType.Builder.<SwordProjectileEntity>of(SwordProjectileEntity::new, MobCategory.MISC)
                     .sized(0.5f, 1.15f).build("sword_projectile"));
+
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

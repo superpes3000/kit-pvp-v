@@ -37,6 +37,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SWORD_PROJECTILE.get());
                         output.accept(ModItems.GHOST_INVISIBILITY.get());
                         output.accept(ModItems.KNIGHT_ESTUS.get());
+                        output.accept(ModItems.SUMMON_SKELETONS_ITEM.get());
+
 
                     }).build());
 

@@ -34,7 +34,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HOOK.get());
                         output.accept(ModItems.NURSE_BLINK.get());
                         output.accept(ModItems.INVISIBILITY_ITEM.get());
-
+                        output.accept(ModItems.SUMMON_SKELETONS_ITEM.get());
                     }).build());
 
     public static void register(IEventBus eventBus){

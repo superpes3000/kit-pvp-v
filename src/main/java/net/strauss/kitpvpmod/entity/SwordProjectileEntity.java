@@ -1,5 +1,7 @@
 package net.strauss.kitpvpmod.entity;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
@@ -61,7 +63,10 @@ public class SwordProjectileEntity extends ThrowableItemProjectile {
 
         if (target instanceof LivingEntity living && owner instanceof LivingEntity attacker) {
             DamageSource source = this.damageSources().thrown(this, attacker);
-            living.hurt(source, 6.0F); // урон
+            living.hurt(source, 8.0F); // урон
+            int durationTicks = 3 * 20; // 3 секунды
+            living.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, durationTicks, 0, false, true, true));
+            living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, durationTicks, 3, false, true, true));
         }
 
         this.discard(); // исчезает после попадания

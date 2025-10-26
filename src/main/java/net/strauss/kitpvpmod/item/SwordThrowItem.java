@@ -44,7 +44,7 @@ public class SwordThrowItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         // Добавляем описание
-        tooltip.add(Component.literal("§7Можно кинуть. "));
+        tooltip.add(Component.literal("§7Можно кинуть."));
         tooltip.add(Component.literal("§7При попадании наносит большой урон и оглушает."));
 
     }

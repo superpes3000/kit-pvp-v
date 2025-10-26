@@ -8,5 +8,7 @@
   "item.kitpvpmod.jump_slam": "§3Jump Slam",
   "item.kitpvpmod.crow_attack": "§7Spit",
   "item.kitpvpmod.crow_burst": "§8Crow Jump",
-  "item.kitpvpmod.crow_dash": "§7Crow Dash"
+  "item.kitpvpmod.crow_dash": "§7Crow Dash",
+  "item.kitpvpmod.knight_estus": "§7Knight Estus",
+  "item.kitpvpmod.ghost_invisibility": "§7Ghost Invisibility",
 }

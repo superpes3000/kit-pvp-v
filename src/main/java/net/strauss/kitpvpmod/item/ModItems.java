@@ -36,6 +36,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> KNIGHT_ASSAULT = ITEMS.register("knight_assault",
             () -> new KnightAssault(new Item.Properties()));
+
+    public static final RegistryObject<Item> KNIGHT_ESTUS = ITEMS.register("knight_estus",
+            () -> new KnightEstus(new Item.Properties()));
+
     public static final RegistryObject<Item> TOMAHAWK_ESCAPE = ITEMS.register("tomahawk_escape",
             () -> new TomahawkEscape(new Item.Properties()));
     public static final RegistryObject<Item> LUMBER_RUSH = ITEMS.register("lumber_rush",

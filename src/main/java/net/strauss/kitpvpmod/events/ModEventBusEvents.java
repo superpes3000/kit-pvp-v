@@ -1,5 +1,7 @@
 package net.strauss.kitpvpmod.events;
 
+import net.minecraft.world.entity.monster.Skeleton;
+import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.strauss.kitpvpmod.KitPvpMod;
 import net.strauss.kitpvpmod.client.TomahawkProjectileModel;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -7,6 +9,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.strauss.kitpvpmod.entity.ModEntities;
 
 @Mod.EventBusSubscriber(modid = KitPvpMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
@@ -23,5 +26,17 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
 
+    }
+
+    @SubscribeEvent
+    public static void onEntityAttributeCreate(EntityAttributeCreationEvent event) {
+        event.put(
+                ModEntities.FRIENDLY_SKELETON.get(),
+                Skeleton.createAttributes().build()
+        );
+        event.put(
+                ModEntities.FRIENDLY_WITHER_SKELETON.get(),
+                WitherSkeleton.createAttributes().build()
+        );
     }
 }

@@ -31,6 +31,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CROW_ATTACK.get());
                         output.accept(ModItems.CROW_BURST.get());
                         output.accept(ModItems.DASH_ITEM.get());
+                        output.accept(ModItems.SUMMON_SKELETONS_ITEM.get());
                     }).build());
 
     public static void register(IEventBus eventBus){

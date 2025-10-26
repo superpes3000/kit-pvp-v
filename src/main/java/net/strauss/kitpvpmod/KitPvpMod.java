@@ -2,6 +2,8 @@ package net.strauss.kitpvpmod;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.SkeletonRenderer;
+import net.minecraft.client.renderer.entity.WitherSkeletonRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -74,6 +76,8 @@ public class KitPvpMod {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             EntityRenderers.register(ModEntities.HOOK_PROJECTILE.get(), HookRenderer::new);;
+            EntityRenderers.register(ModEntities.FRIENDLY_SKELETON.get(), SkeletonRenderer::new);
+            EntityRenderers.register(ModEntities.FRIENDLY_WITHER_SKELETON.get(), WitherSkeletonRenderer::new);
         }
     }
 }

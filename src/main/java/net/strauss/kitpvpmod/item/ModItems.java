@@ -48,12 +48,17 @@ public class ModItems {
     public static final RegistryObject<Item> JUMP_SLAM = ITEMS.register("jump_slam",
             () -> new JumpSlam(new Item.Properties()));
 
-    public static final RegistryObject<Item> HOOK = ITEMS.register("model",
+    public static final RegistryObject<Item> HOOK = ITEMS.register("hook",
             () -> new HookItem(new Item.Properties()));
 
     public static final RegistryObject<Item> SUMMON_SKELETONS_ITEM = ITEMS.register("summon_skeletons_item",
             () -> new SummonSkeletonsItem(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> SWORD_PROJECTILE = ITEMS.register("sword_projectile",
+            () -> new com.example.mod.item.SwordThrowItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> GHOST_INVISIBILITY = ITEMS.register("ghost_invisibility",
+            () -> new GhostInvisibility(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

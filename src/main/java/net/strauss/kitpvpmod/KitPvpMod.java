@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.SkeletonRenderer;
 import net.minecraft.client.renderer.entity.WitherSkeletonRenderer;
 import net.strauss.kitpvpmod.client.renderer.HookRenderer;
+import net.strauss.kitpvpmod.client.renderer.SwordProjectileRenderer;
 import net.strauss.kitpvpmod.effect.ModEffects;
 import net.strauss.kitpvpmod.entity.ModEntities;
 
@@ -77,10 +78,12 @@ public class KitPvpMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MinecraftForge.EVENT_BUS.register(com.example.mymod.client.PlayerRenderHandler.class);
+
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             EntityRenderers.register(ModEntities.HOOK_PROJECTILE.get(), HookRenderer::new);
             EntityRenderers.register(ModEntities.FRIENDLY_SKELETON.get(), SkeletonRenderer::new);
             EntityRenderers.register(ModEntities.FRIENDLY_WITHER_SKELETON.get(), WitherSkeletonRenderer::new);
+            EntityRenderers.register(ModEntities.SWORD_PROJECTILE.get(), SwordProjectileRenderer::new);
         }
     }
 }

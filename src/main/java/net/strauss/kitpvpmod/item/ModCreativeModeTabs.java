@@ -34,6 +34,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HOOK.get());
                         output.accept(ModItems.NURSE_BLINK.get());
                         output.accept(ModItems.INVISIBILITY_ITEM.get());
+                        output.accept(ModItems.SWORD_PROJECTILE.get());
+                        output.accept(ModItems.GHOST_INVISIBILITY.get());
+
 
                     }).build());
 

@@ -1,5 +1,6 @@
 package net.strauss.kitpvpmod.item;
 
+import com.example.mod.item.SwordThrowItem;
 import net.strauss.kitpvpmod.item.abilities.*;
 import net.strauss.kitpvpmod.KitPvpMod;
 import net.strauss.kitpvpmod.item.bows.Fox5BOW;
@@ -22,7 +23,8 @@ public class ModItems {
             () -> new TomahawkItem(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> GRENADE = ITEMS.register("grenade",
             () -> new GrenadeItem(new Item.Properties().stacksTo(16)));
-
+    public static final RegistryObject<Item> MAGNETIC_PROJECTILE_ATTRACT = ITEMS.register("magnetic_projectile_attract",
+            () -> new net.strauss.kitpvpmod.item.MagneticAttractProjectile(new Item.Properties().stacksTo(16)));
 
     public static final RegistryObject<Item> CROW_ATTACK = ITEMS.register("crow_attack",
             () -> new TripleArrowItem(new Item.Properties().stacksTo(16)));
@@ -50,8 +52,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> HOOK = ITEMS.register("hook",
             () -> new HookItem(new Item.Properties()));
+    public static final RegistryObject<Item> SWORD_PROJECTILE = ITEMS.register("sword_projectile",
+            () -> new SwordThrowItem(new Item.Properties()));
 
-
+    public static final RegistryObject<Item> GHOST_INVISIBILITY = ITEMS.register("ghost_invisibility",
+            () -> new GhostInvisibility(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

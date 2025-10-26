@@ -1,5 +1,6 @@
 package net.strauss.kitpvpmod.entity;
 
+import net.minecraft.resources.ResourceLocation;
 import net.strauss.kitpvpmod.KitPvpMod;
 import net.strauss.kitpvpmod.entity.custom.TomahawkProjectileEntity;
 import net.minecraft.world.entity.EntityType;
@@ -22,6 +23,13 @@ public class ModEntities {
     public static final RegistryObject<EntityType<GrenadeEntity>> GRENADE =
             ENTITY_TYPES.register("grenade", () -> EntityType.Builder.<GrenadeEntity>of(GrenadeEntity::new, MobCategory.MISC)
                     .sized(0.5f, 1.15f).build("grenade"));
+    public static final RegistryObject<EntityType<MagneticAttractSnowballEntity>> MAGNETIC_PROJECTILE_ATTRACT =
+            ENTITY_TYPES.register("magnetic_projectile_attract", () -> EntityType.Builder.<MagneticAttractSnowballEntity>of(MagneticAttractSnowballEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 1.15f).build("magnetic_projectile_attract"));
+
+    public static final RegistryObject<EntityType<MagneticAttractZone>> MAGNETIC_ATTRACT_ZONE =
+            ENTITY_TYPES.register("magnetic_attract_zone", () -> EntityType.Builder.<MagneticAttractZone>of(MagneticAttractZone::new, MobCategory.MISC)
+                    .sized(0.5f, 1.15f).build("magnetic_attract_zone"));
 
     public static final RegistryObject<EntityType<GrenadeEntity>> CROW_PROJECTILE =
             ENTITY_TYPES.register("crow_projectile", () -> EntityType.Builder.<GrenadeEntity>of(GrenadeEntity::new, MobCategory.MISC)
@@ -29,8 +37,12 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<HookProjectile>> HOOK_PROJECTILE =
             ENTITY_TYPES.register("hook_projectile", () -> EntityType.Builder.<HookProjectile>of(HookProjectile::new, MobCategory.MISC)
+                    .clientTrackingRange(128)
                     .sized(0.8f, 0.8f).build("hook_projectile"));
 
+    public static final RegistryObject<EntityType<SwordProjectileEntity>> SWORD_PROJECTILE =
+            ENTITY_TYPES.register("sword_projectile", () -> EntityType.Builder.<SwordProjectileEntity>of(SwordProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 1.15f).build("sword_projectile"));
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

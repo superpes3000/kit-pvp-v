@@ -2,6 +2,7 @@ package net.strauss.kitpvpmod;
 
 import com.mojang.logging.LogUtils;
 import net.strauss.kitpvpmod.client.renderer.HookRenderer;
+import net.strauss.kitpvpmod.effect.ModEffects;
 import net.strauss.kitpvpmod.entity.ModEntities;
 
 import net.strauss.kitpvpmod.client.renderer.TomahawkProjectileRenderer;
@@ -38,6 +39,7 @@ public class KitPvpMod {
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModEffects.register(modEventBus);
         ModEntities.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
 
@@ -72,6 +74,8 @@ public class KitPvpMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            MinecraftForge.EVENT_BUS.register(com.example.mymod.client.PlayerRenderHandler.class);
+
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             EntityRenderers.register(ModEntities.HOOK_PROJECTILE.get(), HookRenderer::new);
         }

@@ -38,7 +38,10 @@ public class ModItems {
             () -> new TomahawkEscape(new Item.Properties()));
     public static final RegistryObject<Item> LUMBER_RUSH = ITEMS.register("lumber_rush",
             () -> new LumberRush(new Item.Properties()));
-
+    public static final RegistryObject<Item> NURSE_BLINK = ITEMS.register("nurse_blink",
+            () -> new NurseBlink(new Item.Properties()));
+    public static final RegistryObject<Item> INVISIBILITY_ITEM = ITEMS.register("invisibility_item",
+            () -> new com.example.mymod.item.InvisibilityItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> BEAST_RUSH = ITEMS.register("beast_rush",
             () -> new BeastRush(new Item.Properties()));
 

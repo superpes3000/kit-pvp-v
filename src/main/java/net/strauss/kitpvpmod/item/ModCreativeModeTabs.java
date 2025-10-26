@@ -31,6 +31,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CROW_ATTACK.get());
                         output.accept(ModItems.CROW_BURST.get());
                         output.accept(ModItems.DASH_ITEM.get());
+                        output.accept(ModItems.HOOK.get());
+                        output.accept(ModItems.NURSE_BLINK.get());
+                        output.accept(ModItems.INVISIBILITY_ITEM.get());
+
                     }).build());
 
     public static void register(IEventBus eventBus){

@@ -4,6 +4,8 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.player.Player;
@@ -18,6 +20,7 @@ import java.util.function.Predicate;
 public class FriendlyWitherSkeleton extends WitherSkeleton implements FriendlyMob{
 
     private static final String OWNER_TAG = "OwnerUUID";
+    private int lifetimeTicks = 20 * 11;
     @Nullable
     private UUID ownerUuid;
     public FriendlyWitherSkeleton(EntityType<? extends WitherSkeleton> pEntityType, Level pLevel) {
@@ -49,6 +52,19 @@ public class FriendlyWitherSkeleton extends WitherSkeleton implements FriendlyMo
             if (ownerUuid.equals(otherUuid)) return true;
         }
         return super.isAlliedTo(other);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        if (!this.level().isClientSide) {
+            if (lifetimeTicks > 0) {
+                lifetimeTicks--;
+            } else {
+                this.discard();
+            }
+        }
     }
 
     @Override
@@ -87,5 +103,13 @@ public class FriendlyWitherSkeleton extends WitherSkeleton implements FriendlyMo
     @Override
     public boolean isSunBurnTick() {
         return false;
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return LivingEntity.createLivingAttributes()
+                .add(Attributes.MAX_HEALTH, 10)
+                .add(Attributes.MOVEMENT_SPEED, 0.3)
+                .add(Attributes.FOLLOW_RANGE, 12)
+                .add(Attributes.ATTACK_DAMAGE, 3.0);
     }
 }

@@ -60,6 +60,9 @@ public class ModItems {
     public static final RegistryObject<Item> GHOST_INVISIBILITY = ITEMS.register("ghost_invisibility",
             () -> new GhostInvisibility(new Item.Properties()));
 
+    public static final RegistryObject<Item> SKELETON_ESCAPE = ITEMS.register("skeleton_escape",
+            () -> new SkeletonEscape(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

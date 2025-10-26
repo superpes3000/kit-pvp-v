@@ -78,7 +78,6 @@ public class KitPvpMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MinecraftForge.EVENT_BUS.register(com.example.mymod.client.PlayerRenderHandler.class);
-
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             EntityRenderers.register(ModEntities.HOOK_PROJECTILE.get(), HookRenderer::new);
             EntityRenderers.register(ModEntities.FRIENDLY_SKELETON.get(), SkeletonRenderer::new);

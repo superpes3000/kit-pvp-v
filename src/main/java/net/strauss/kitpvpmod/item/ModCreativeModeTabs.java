@@ -37,6 +37,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUMMON_SKELETONS_ITEM.get());
                         output.accept(ModItems.SWORD_PROJECTILE.get());
                         output.accept(ModItems.GHOST_INVISIBILITY.get());
+                        output.accept(ModItems.SKELETON_ESCAPE.get());
                     }).build());
 
     public static void register(IEventBus eventBus){

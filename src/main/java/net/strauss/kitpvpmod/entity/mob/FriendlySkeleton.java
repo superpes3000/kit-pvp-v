@@ -2,6 +2,8 @@ package net.strauss.kitpvpmod.entity.mob;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -19,6 +21,7 @@ import java.util.function.Predicate;
 
 public class FriendlySkeleton extends Skeleton implements FriendlyMob {
     private static final String OWNER_TAG = "OwnerUUID";
+    private int lifetimeTicks = 20 * 11;
     @Nullable
     private UUID ownerUuid;
 
@@ -41,6 +44,19 @@ public class FriendlySkeleton extends Skeleton implements FriendlyMob {
             return ownerUuid.equals(e.getUUID());
         }
         return false;
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        if (!this.level().isClientSide) {
+            if (lifetimeTicks > 0) {
+                lifetimeTicks--;
+            } else {
+                this.discard();
+            }
+        }
     }
 
     @Override
@@ -83,6 +99,14 @@ public class FriendlySkeleton extends Skeleton implements FriendlyMob {
         } else {
             this.ownerUuid = null;
         }
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return LivingEntity.createLivingAttributes()
+                .add(Attributes.MAX_HEALTH, 10)
+                .add(Attributes.MOVEMENT_SPEED, 0.25)
+                .add(Attributes.FOLLOW_RANGE, 15)
+                .add(Attributes.ATTACK_DAMAGE, 2.5);
     }
 
     @Override

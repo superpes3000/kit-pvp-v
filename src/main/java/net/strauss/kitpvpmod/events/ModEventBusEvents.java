@@ -10,6 +10,8 @@ import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.strauss.kitpvpmod.entity.ModEntities;
+import net.strauss.kitpvpmod.entity.mob.FriendlySkeleton;
+import net.strauss.kitpvpmod.entity.mob.FriendlyWitherSkeleton;
 
 @Mod.EventBusSubscriber(modid = KitPvpMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
@@ -32,11 +34,11 @@ public class ModEventBusEvents {
     public static void onEntityAttributeCreate(EntityAttributeCreationEvent event) {
         event.put(
                 ModEntities.FRIENDLY_SKELETON.get(),
-                Skeleton.createAttributes().build()
+                FriendlySkeleton.createAttributes().build()
         );
         event.put(
                 ModEntities.FRIENDLY_WITHER_SKELETON.get(),
-                WitherSkeleton.createAttributes().build()
+                FriendlyWitherSkeleton.createAttributes().build()
         );
     }
 }

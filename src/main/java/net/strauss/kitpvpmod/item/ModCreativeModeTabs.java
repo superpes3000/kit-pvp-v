@@ -32,13 +32,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CROW_BURST.get());
                         output.accept(ModItems.DASH_ITEM.get());
                         output.accept(ModItems.HOOK.get());
-                        output.accept(ModItems.NURSE_BLINK.get());
-                        output.accept(ModItems.INVISIBILITY_ITEM.get());
                         output.accept(ModItems.SUMMON_SKELETONS_ITEM.get());
                         output.accept(ModItems.SWORD_PROJECTILE.get());
                         output.accept(ModItems.SKELETON_ESCAPE.get());
                         output.accept(ModItems.KNIGHT_ESTUS.get());
                         output.accept(ModItems.GHOST_INVISIBILITY.get());
+                        output.accept(ModItems.BEAR_BEE_MOUNT.get());
+                        output.accept(ModItems.BEAR_HONEY.get());
+                        output.accept(ModItems.BEAR_BEE_SLAYER.get());
+
+                        output.accept(ModItems.BEAR_SLOW_HONEY.get());
+                        output.accept(ModItems.SLIME_MOUNT_ITEM.get());
                     }).build());
 
     public static void register(IEventBus eventBus){

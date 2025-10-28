@@ -1,13 +1,16 @@
 package net.strauss.kitpvpmod.item;
 
+import com.example.mod.item.BearBeeMount;
 import net.strauss.kitpvpmod.item.abilities.*;
 import net.strauss.kitpvpmod.KitPvpMod;
+import net.strauss.kitpvpmod.item.abilities.clown.SlimeMountItem;
 import net.strauss.kitpvpmod.item.bows.Fox5BOW;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.strauss.kitpvpmod.item.custom.ClownBow;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -18,6 +21,9 @@ public class ModItems {
             () -> new CrowDash(new Item.Properties()));
     public static final RegistryObject<Item> FOX5_BOW = ITEMS.register("fox5_bow",
             () -> new Fox5BOW(new Item.Properties()));
+    public static final RegistryObject<Item> CLOWN_BOW = ITEMS.register("clown_bow",
+            () -> new ClownBow(new Item.Properties()));
+
     public static final RegistryObject<Item> TOMAHAWK = ITEMS.register("tomahawk",
             () -> new TomahawkItem(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> GRENADE = ITEMS.register("grenade",
@@ -37,21 +43,25 @@ public class ModItems {
 
     public static final RegistryObject<Item> KNIGHT_ESTUS = ITEMS.register("knight_estus",
             () -> new KnightEstus(new Item.Properties()));
+    public static final RegistryObject<Item> BEAR_BEE_MOUNT = ITEMS.register("bear_bee_mount",
+            () -> new BearBeeMount(new Item.Properties()));
 
     public static final RegistryObject<Item> TOMAHAWK_ESCAPE = ITEMS.register("tomahawk_escape",
             () -> new TomahawkEscape(new Item.Properties()));
     public static final RegistryObject<Item> LUMBER_RUSH = ITEMS.register("lumber_rush",
             () -> new LumberRush(new Item.Properties()));
-    public static final RegistryObject<Item> NURSE_BLINK = ITEMS.register("nurse_blink",
-            () -> new NurseBlink(new Item.Properties()));
-    public static final RegistryObject<Item> INVISIBILITY_ITEM = ITEMS.register("invisibility_item",
-            () -> new com.example.mymod.item.InvisibilityItem(new Item.Properties().stacksTo(1)));
+
     public static final RegistryObject<Item> BEAST_RUSH = ITEMS.register("beast_rush",
             () -> new BeastRush(new Item.Properties()));
-
+    public static final RegistryObject<Item> BEAR_BEE_SLAYER = ITEMS.register("bear_bee_slayer",
+            () -> new net.strauss.kitpvpmod.item.BearBeeSlayer(new Item.Properties()));
     public static final RegistryObject<Item> JUMP_SLAM = ITEMS.register("jump_slam",
             () -> new JumpSlam(new Item.Properties()));
 
+    public static final RegistryObject<Item> BEAR_HONEY = ITEMS.register("bear_honey",
+            () -> new BearHoneyComb(new Item.Properties()));
+    public static final RegistryObject<Item> BEAR_SLOW_HONEY = ITEMS.register("bear_slow_honey",
+            () -> new BearHoneyItem(new Item.Properties()));
     public static final RegistryObject<Item> HOOK = ITEMS.register("hook",
             () -> new HookItem(new Item.Properties()));
 
@@ -59,10 +69,12 @@ public class ModItems {
             () -> new SummonSkeletonsItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> SWORD_PROJECTILE = ITEMS.register("sword_projectile",
-            () -> new com.example.mod.item.SwordThrowItem(new Item.Properties()));
+            () -> new SwordThrowItem(new Item.Properties()));
 
     public static final RegistryObject<Item> GHOST_INVISIBILITY = ITEMS.register("ghost_invisibility",
             () -> new GhostInvisibility(new Item.Properties()));
+    public static final RegistryObject<Item> SLIME_MOUNT_ITEM =
+            ITEMS.register("slime_mount", () -> new SlimeMountItem(new Item.Properties()));
 
     public static final RegistryObject<Item> SKELETON_ESCAPE = ITEMS.register("skeleton_escape",
             () -> new SkeletonEscape(new Item.Properties()));

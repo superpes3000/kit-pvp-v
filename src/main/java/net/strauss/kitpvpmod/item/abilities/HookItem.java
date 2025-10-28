@@ -1,4 +1,4 @@
-package net.strauss.kitpvpmod.item;
+package net.strauss.kitpvpmod.item.abilities;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

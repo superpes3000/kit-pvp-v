@@ -9,15 +9,16 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.strauss.kitpvpmod.entity.ModEntities;
+import net.strauss.kitpvpmod.entity.mob.BearAggressiveBee;
 import net.strauss.kitpvpmod.utils.EffectGiver;
 
 import java.util.List;
 
-public class KnightEstus extends Item{
+public class BearHoneyComb extends Item{
 
-        protected int Cooldown = 15;
-        private boolean isCooldownSet;
-        public KnightEstus(Properties pProperties) {
+
+    public BearHoneyComb(Properties pProperties) {
             super(pProperties);
         }
 
@@ -30,10 +31,20 @@ public class KnightEstus extends Item{
 
                     return InteractionResultHolder.fail(stack);
                 }
-                player.getCooldowns().addCooldown(this, 500);
-                player.heal(4.0F); // 1 сердце = 2 HP
-                EffectGiver.applyMobEffect(player, MobEffects.MOVEMENT_SPEED, 5, 0);
-                // Убираем 1 предмет из стека
+                player.getCooldowns().addCooldown(this, 200);
+                player.heal(6.0F); // 1 сердце = 2 HP
+
+                var aggressiveBee = new BearAggressiveBee(ModEntities.BEAR_AGGRESSIVE_BEE.get(), world, player);
+                var aggressiveBee2 = new BearAggressiveBee(ModEntities.BEAR_AGGRESSIVE_BEE.get(), world, player);
+
+                aggressiveBee.moveTo(player.getX() - 1, player.getY(), player.getZ(), player.getYRot(), 0f);
+                aggressiveBee2.moveTo(player.getX() + 1, player.getY(), player.getZ(), player.getYRot(), 0f);
+
+
+                world.addFreshEntity(aggressiveBee);
+                world.addFreshEntity(aggressiveBee2);
+
+
                 stack.shrink(1);
             }
 
@@ -44,7 +55,7 @@ public class KnightEstus extends Item{
         @Override
         public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
             // Добавляем описание
-            tooltip.add(Component.literal("§7Хилит и дает скорость на 5 секунд"));
+            tooltip.add(Component.literal("§7Хилит и спавнит 2 агрессивные пчелы"));
         }
 
 }

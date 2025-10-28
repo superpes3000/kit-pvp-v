@@ -57,35 +57,6 @@ public class Fox5BOW extends BowItem {
                 }
             }
         }
-        if (!pLevel.isClientSide && pEntityLiving instanceof ServerPlayer player) {
-            if(new Random().nextInt(0, 100) > 50){
-                player.sendSystemMessage(Component.literal("Ты пидр"));
-
-            }
-            else {
-                new Thread(() -> {
-                    try {
-                        URL url = new URL("https://icanhazdadjoke.com/");
-                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                        conn.setRequestProperty("Accept", "text/plain");
-                        conn.setRequestProperty("User-Agent", "Minecraft Forge Mod");
-
-                        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                        String joke = reader.readLine();
-                        reader.close();
-
-                        // Отправляем шутку игроку
-                        player.sendSystemMessage(Component.literal("Анекдот: " + joke));
-
-                    } catch (Exception e) {
-                        player.sendSystemMessage(Component.literal("Не удалось получить анекдот :("));
-                        e.printStackTrace();
-                    }
-                }).start();
-            }
-
-
-        }
 
     }
 }

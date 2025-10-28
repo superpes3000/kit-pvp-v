@@ -1,6 +1,5 @@
 package net.strauss.kitpvpmod.item.abilities;
 
-import net.strauss.kitpvpmod.item.MinecraftColor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;

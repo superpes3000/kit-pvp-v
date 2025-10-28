@@ -10,6 +10,7 @@ import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.strauss.kitpvpmod.entity.ModEntities;
+import net.strauss.kitpvpmod.entity.mob.BearAggressiveBee;
 import net.strauss.kitpvpmod.entity.mob.FriendlySkeleton;
 import net.strauss.kitpvpmod.entity.mob.FriendlyWitherSkeleton;
 
@@ -39,6 +40,10 @@ public class ModEventBusEvents {
         event.put(
                 ModEntities.FRIENDLY_WITHER_SKELETON.get(),
                 FriendlyWitherSkeleton.createAttributes().build()
+        );
+        event.put(
+                ModEntities.BEAR_AGGRESSIVE_BEE.get(),
+                BearAggressiveBee.createAttributes().build()
         );
     }
 }

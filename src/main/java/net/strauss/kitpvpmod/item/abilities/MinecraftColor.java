@@ -1,4 +1,4 @@
-package net.strauss.kitpvpmod.item;
+package net.strauss.kitpvpmod.item.abilities;
 
 public enum MinecraftColor {
     BLACK("0"),

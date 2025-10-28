@@ -1,14 +1,18 @@
 package net.strauss.kitpvpmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.BeeRenderer;
 import net.minecraft.client.renderer.entity.SkeletonRenderer;
 import net.minecraft.client.renderer.entity.WitherSkeletonRenderer;
+import net.minecraft.world.entity.projectile.Snowball;
+import net.strauss.kitpvpmod.client.renderer.BearHoneyRenderer;
 import net.strauss.kitpvpmod.client.renderer.HookRenderer;
 import net.strauss.kitpvpmod.client.renderer.SwordProjectileRenderer;
 import net.strauss.kitpvpmod.effect.ModEffects;
 import net.strauss.kitpvpmod.entity.ModEntities;
 
 import net.strauss.kitpvpmod.client.renderer.TomahawkProjectileRenderer;
+import net.strauss.kitpvpmod.entity.mob.BearAggressiveBee;
 import net.strauss.kitpvpmod.item.ModCreativeModeTabs;
 import net.strauss.kitpvpmod.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -80,6 +84,9 @@ public class KitPvpMod {
             MinecraftForge.EVENT_BUS.register(com.example.mymod.client.PlayerRenderHandler.class);
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             EntityRenderers.register(ModEntities.HOOK_PROJECTILE.get(), HookRenderer::new);
+            EntityRenderers.register(ModEntities.BEAR_AGGRESSIVE_BEE.get(), BeeRenderer::new);
+
+            EntityRenderers.register(ModEntities.BEAR_HONEY_ENTITY.get(), BearHoneyRenderer::new);
             EntityRenderers.register(ModEntities.FRIENDLY_SKELETON.get(), SkeletonRenderer::new);
             EntityRenderers.register(ModEntities.FRIENDLY_WITHER_SKELETON.get(), WitherSkeletonRenderer::new);
             EntityRenderers.register(ModEntities.SWORD_PROJECTILE.get(), SwordProjectileRenderer::new);

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "kitpvpmod:item/bear_bee_slayer"
+  }
+}

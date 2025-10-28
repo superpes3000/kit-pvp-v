@@ -1,4 +1,4 @@
-package net.strauss.kitpvpmod.item;
+package net.strauss.kitpvpmod.item.abilities;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;

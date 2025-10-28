@@ -1,4 +1,4 @@
-package net.strauss.kitpvpmod.item;
+package net.strauss.kitpvpmod.item.abilities;
 
 import net.strauss.kitpvpmod.entity.custom.TomahawkProjectileEntity;
 import net.minecraft.network.chat.Component;
